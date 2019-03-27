@@ -52,7 +52,7 @@ app.get("/audio-feed", function(req, res){
         Goa news is a new media source which will get you latest news in Goa.
         We cover sports, politics, mining and other current affairs news.
        </description>
-       <guid isPermaLink=false>A-1</guid>
+       <guid isPermaLink="false">A-1</guid>
        <enclosure length="867" type="audio/mpeg" url="http://news.example.com/sample.mp3"/>
        <pubDate>Wed, Mar 27 2019 11:31:07 GMT</pubDate>
        <itunes:duration>8</itunes:duration>
