@@ -36,15 +36,15 @@ app.get("/audio-feed", function(req, res){
   version="2.0">
     <channel>
      <title>Goa News</title>
-     <link>http://www.example.com/news/nightly-news-with-nancy</link>
+     <link>https://goa-news.herokuapp.com</link>
      <description>
         This service will get you all the current affairs of goa in a audio news format.
         We cover news about politics, sports and current affairs
      </description>
      <image>
-       <url>http://www.example.com/news/nightly-news-with-nancy/icon.png</url>
+       <url>https://goa-news.herokuapp.com/icon.png</url>
        <title>Goa News</title>
-       <link>http://www.example.com/news/nightly-news-with-nancy</link>
+       <link>https://goa-news.herokuapp.com</link>
      </image>
      <item>
        <title>Intoduction to Goa News</title>
@@ -53,7 +53,7 @@ app.get("/audio-feed", function(req, res){
         We cover sports, politics, mining and other current affairs news.
        </description>
        <guid isPermaLink="false">A-1</guid>
-       <enclosure length="867" type="audio/mpeg" url="http://news.example.com/sample.mp3"/>
+       <enclosure length="867" type="audio/mpeg" url="https://goa-news.herokuapp.com/sample.mp3"/>
        <pubDate>Wed, Mar 27 2019 11:31:07 GMT</pubDate>
        <itunes:duration>8</itunes:duration>
      </item>
@@ -70,9 +70,13 @@ app.get("/google76afafe39ef3304f.html", function(req, res) {
   res.sendFile(__dirname + '/google76afafe39ef3304f.html');
 });
 
+app.get("/icon.png", function(req, res) {
+  res.sendFile(__dirname + '/icon.png');
+});
+
 // https://trending-news-v.herokuapp.com/file-1552915152824.mp3
-app.get("/file-1552915152824.mp3", function(req, res) {
-  res.sendFile(__dirname + '/file-1552915152824.mp3');
+app.get("/sample.mp3", function(req, res) {
+  res.sendFile(__dirname + '/sample.mp3');
 });
 
 //rss feed
