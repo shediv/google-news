@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>Get Trending News of a country</strong>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form" ng-submit="trending()">
+                    <div class="form-group">
+                        <label for="countryCode" class="col-sm-2 control-label">Select Country</label>
+                        <select name="countryCode" id="countryCode" ng-model="countryCode" required>
+                            <option value="IN">India</option>
+                            <optgroup label="countries">
+                                <option value="AU">Australia</option>
+                                <option value="CN">China</option>
+                                <option value="IN">India</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="US">United States</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Trending News</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div ng-show="showCarousel" flex-xs flex-gt-xs="100" layout="column" ng-repeat="news in newsArticles">
+                    <md-card md-theme="default" md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{news.title}}</span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media"><img src="{{news.urlToImage}}"></img></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-content flex layout-padding>
+                        <div ng-if="news.summary">
+                            <label>Total length : {{news.summaryLength}} characters</label>
+                            <md-content flex layout-padding>
+                                    {{news.summary}}
+                            </md-content>
+                        </div>
+                        <div ng-if="news.originalText">
+                            <label>Total length : {{news.originalTextLength}} characters</label>
+                            <md-content flex layout-padding>
+                                    {{news.originalText}}
+                            </md-content>
+                        </div>
+                        <md-card-actions layout="row" layout-align="end center">
+                        <md-button ng-click="getArticleSummary(news.url)">Read Summary</md-button>
+                        <md-button ng-click="getArticleDetails(news.url)">Read Full Article</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
