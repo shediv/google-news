@@ -53,9 +53,9 @@ app.get("/audio-feed", function(req, res){
         We cover sports, politics, mining and other current affairs news.
        </description>
        <guid isPermaLink="false">A-1</guid>
-       <enclosure length="867" type="audio/mpeg" url="https://goa-news.herokuapp.com/sample.mp3"/>
+       <enclosure length="130" type="audio/mpeg" url="https://goa-news.herokuapp.com/sample.mp3"/>
        <pubDate>Wed, Mar 27 2019 11:31:07 GMT</pubDate>
-       <itunes:duration>8</itunes:duration>
+       <itunes:duration>7</itunes:duration>
      </item>
     </channel>
   </rss>`
